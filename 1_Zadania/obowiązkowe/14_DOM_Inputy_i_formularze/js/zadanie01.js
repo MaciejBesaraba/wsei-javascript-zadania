@@ -10,4 +10,4 @@ document.addEventListener("DOMContentLoaded", function () {
             invoiceData.style.display = 'none';
         }
     });
-});
+}) ;
