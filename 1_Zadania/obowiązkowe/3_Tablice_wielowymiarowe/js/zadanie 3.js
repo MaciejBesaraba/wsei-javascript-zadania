@@ -9,4 +9,4 @@ function print2DArray(task2Array) {
     }
 }
 
-print2DArray([[1,2], [3,4]])
+print2DArray([[1,2], [3,4]]) 
