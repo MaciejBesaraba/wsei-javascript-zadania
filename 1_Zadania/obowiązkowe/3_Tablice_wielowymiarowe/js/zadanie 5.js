@@ -16,4 +16,4 @@ function create2DArray(rows, columns){
     return array1;
 }
 
-create2DArray(4,4);
+create2DArray(4,4); 
