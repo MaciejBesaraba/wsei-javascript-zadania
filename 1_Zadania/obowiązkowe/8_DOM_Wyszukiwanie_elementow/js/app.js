@@ -3,31 +3,31 @@ document.addEventListener("DOMContentLoaded", function () {
     Poniżej napisz kod rozwiązujący zadania. Odpowiedzi oddzielaj komentarzami.
      */
 
+    //zadanie 0
+    const htmlWithClassTitle = document.getElementsByClassName('title')[0];
+    const htmlWithClassTitleByQuery = document.querySelector('#title');
 
-const titleE1 = document.querySelector("div .title");
+    function getDataAnimation(htmlElement) {
+        const dataAnimation = htmlElement.getAttribute('data-animation');
+        return dataAnimation;
+    }
 
-function getDataAnimation(element) {
-    return element.getAttribute("data-animation");
-}
+    getDataAnimation(htmlWithClassTitle);
 
-console.log(getDataAnimation(titleE1));
+    //zadanie 1
+    const htmlElementByIdHome = document.querySelector('#home');
+    const firstHtmlLiWithDataDirection = document.querySelector('li[data-direction]');
+    const firstHtmlWithClassBlock = document.querySelector('.block');
 
-const home = document.querySelector("#home");
-const home2 = document.queryElementbyId("home2");
-const lielement = document.querySelector("li[data-direction]");
-const element = document.querySelector(".block");
+    //zadanie 2
+    const allLiIncludedInNavTag = document.querySelectorAll('nav li');
+    const allParagraphsWithinDivs = document.querySelectorAll('div p');
+    const sallDivsInsideArticle = document.querySelectorAll('article div');
 
-const list = document.querySelectorAll("nav li");
-const paragraphs = document.querySelectorAll("div p");
-const divs = document.querySelectorAll("article div");
+    //zadanie 3
+    const htmlTagArticleWithClassFirst = document.querySelector('article.first');
 
-console.table(list);
-console.table(paragraphs);
-console.table(divs);
-
-const article = document.querySelector("article.first");
-let result = article.getElementsByTagName("h1");
-console.log(result.length);
+    console.log(htmlTagArticleWithClassFirst.querySelectorAll('h1').length);
 
 });
 
