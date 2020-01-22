@@ -39,4 +39,4 @@ document.addEventListener("DOMContentLoaded", function () {
         return document.querySelector(`#${id}`).value;
     }
 
-}) ;
+});
