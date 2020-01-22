@@ -1,3 +1,5 @@
+//zadanie 1
+
 var Robot = function (name) {
     this.name = name;
     this.isFunctional = true;
