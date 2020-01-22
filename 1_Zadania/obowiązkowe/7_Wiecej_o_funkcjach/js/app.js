@@ -4,29 +4,26 @@
  * Napisz komentarze dla kazdej z linijek kodu
  */
 
-
-//Twoj komentarz ...
+//Deklaracja funkcji i stworzenie jej zakresu 
 function jeden() {
 
-    //Twoj komentarz ...
+    //Deklaracja i przypisanie zmiennej w okreslonym zakresie
     var zmienna1 = 1;
 
-    //Twoj komentarz ...
+    //Deklaracja drugiej funkcji i stworzenie nowego zakresu
     function dwa() {
 
-        //Twoj komentarz ...
+        //Zakres metody jeden jest czescia metody dwa, więc wszystkie definicje będą przekazywane z zewnętrznego zakresu
         console.log(zmienna1);
 
-        //Twoj komentarz ...
+        //Zadeklarowanie i przypisanie nowej zmiennej zmienna2
         var zmienna2 = 3;
     }
 
-    //Twoj komentarz ...
+    //Wywołanie funkcji
     dwa();
 
-    //Twoj komentarz ...
-    console.log(zmienna2)
 }
 
-//Twoj komentarz ...
+//Wywołanie funkcji
 jeden()
