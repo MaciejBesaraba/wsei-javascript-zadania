@@ -1,6 +1,6 @@
 //zadanie 0
 
-function checkArray(ddarray) {
+function checkArray(ddarray) { 
     var result = [];
     for (let i = 0; i < ddarray.length; i++) {
         const isNotOdd = ddarray[i].filter(number => number % 2 != 0).lengh > 0;

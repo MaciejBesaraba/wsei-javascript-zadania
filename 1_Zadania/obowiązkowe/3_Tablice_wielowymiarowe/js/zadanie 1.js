@@ -10,6 +10,6 @@ var task1Array = [
 
 console.log(task1Array[3][2]);
 
-console.log(task1Array)[1].length);
+console.log(task1Array[1].length);
 
 console.log(task1Array[4][2]);
