@@ -20,7 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
       // Tutaj this wskazuje na element Window, bo funkcja została
       //wywołana bez żadnego kontekstu.
       console.log("innerFuncOne: ", this);
+
+      //mamy zadeklarowane b to wystarczy bezpośrednie odwołanie
+      // b.style.color = 'red';
     }
+
+    //lepszym rozwiązaniem było by napisanie ogólnej funkcji
+    // function innerFuncOne(el) {
+      // el.style.color = 'red';
+    // }
+    // innerFuncOne(this);
+
     innerFuncOne();
 
   });
