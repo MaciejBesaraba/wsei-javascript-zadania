@@ -5,21 +5,23 @@
  * Napisz komentarze dla kazdej z linijek kodu
  */
 
-//Twoj komentarz ...
+//Deklaracja funkcji
 function sortArray() {
 
-    //Twoj komentarz ...
+    //Definicja i przypisanie zmiennej
     var points = [41, 3, 6, 1, 114, 54, 64];
 
-    //Twoj komentarz ...
+    //Wywołanie obiektowej metody tablicy - sortowanie
+    //funkcja oceni, czy dwa elementy tablicy powinny być podmienione
     points.sort(function (a, b) {
-        //Twoj komentarz ...
+        //Zwraca rezultat odejmowania dwóch elementów tablicy
+        //jeśli wartość zwracana jest większa niż 0, zwracane elementy zostaną podmienione
         return a - b;
     });
 
-    //Twoj komentarz ...
+    //Zwracanie powiązania tablicy z metody
     return points;
 }
 
-//Twoj komentarz ...
+//Wywołanie funkcji
 sortArray();
