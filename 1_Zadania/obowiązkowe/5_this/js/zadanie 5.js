@@ -1,148 +1,100 @@
-//zadanie 0a 
+//zadanie 0
+class Car {
 
-const city = {
-    capital: "Warszawa";
-    population: 1000000;
-    president: "Trzaskowski";
-    primeMinister: ["Adam, Bogdan"];
-
-};
-
-console.log(city.capital + city.population + city.president + city.primeMinister);
-
-
-//zadanie 0b
-
-const timeMachine = {
-    shape: "Portal";
-    model: "";
-    run : function(date, place) {
-        console.log('Przeniosłeś się do ${place} + i jest obecnie ${date} + date');
+    constructor(brand, color) {
+        this._brand = brand;
+        this._color = color;
+        this._kilometers = 0;
     }
-};
 
-timeMachine.run("20-11-2030", "Sydney");
+    get brand() {
+        return this._brand;
+    }
+
+    get color() {
+        return this._color;
+    }
+
+    get numberOfKilometers() {
+        return this._kilometers;
+    }
+
+    toString() {
+        return `${this.color} ${this.brand}, ${this.numberOfKilometers}km`
+    }
+
+    printCarInfo() {
+        console.log(this.toString());
+    }
+
+    drive(km) {
+        if (km < 0) {
+            throw 'number is less than 0';
+        }
+        this._kilometers += km;
+    }
+}
+
+const car = new Car('Mercedes', 'Czarny');
+car.printCarInfo();
+car.drive(20);
+car.printCarInfo();
 
 
 //zadanie 1
-
-const book = {
-    title: 'test',
-    author: 'author',
-    numberOfPages: 'number',
-};
-
-for (const key of book) {
-    console.log(book[key]);
+Car.prototype.technicalReviewDates = [];
+Car.prototype.addReview = function(isoDateTimeString) {
+    this.technicalReviewDates.push(isoDateTimeString);
 }
+
+Car.prototype.getReviews = function(isoDateTimeString) {
+    return this.technicalReviewDates;
+}
+
+car.addReview("2018-01-03T10:00:00+01:00");
+console.log(car.technicalReviewDates);
 
 
 //zadanie 2
+var calculator = {
+    save: function (newA, newB) {
+        this.a = newA;
+        this.b = newB;
+    },
 
-var person = {
-    name: 'Andrzej',
-    age: 12,
-    sayHello: function(){
-        console.log("hello");
+    sum: function () {
+        return this.a + this.b;
+    },
+
+    multiply: function () {
+        return this.a * this.b;
     }
-}
+};
 
-console.log(person.name);
-console.log(person.age);
-person.sayHello();
+calculator.save(2, 3);
+console.log(calculator.sum());
+console.log(calculator.multiply());
 
 
 //zadanie 3
+const stairs = {
+    step: 0,
 
-const recipe = {
-    title: 'przepis',
-    servings: 0
-    
-}
-
-recipe.ingredients = [];
-recipe.addIngedient = function(ingredient) {
-    this.ingredient.push(ingredient);
-    this.servings++;
-}
-
-recipe.addIngedient('składnik 1');
-recipe.addIngedient('składnik 2');
-
-console.log(recipe.title);
-console.log(recipe.servings);
-console.log(recipe.ingredients);
-
-
-//zadanie 4
-
-var movie = {
-    director: "Peter Jackson",
-    writers: [" J.R.R. Tolkien ", "Fran Walsh", "Philippa Boyens", "Peter Jackson"],
-    stars: ["Elijah Wood", "Ian McKellen", "Orlando Bloom"],
-    country: "New Zealand | USA",
-    budget: "$93,000,000",
-    imdbPoints: 8.8,
-    year: 2001,
-    time: "2h 58 min",
-    category: " Adventure, Drama, Fantasy"
-}
-
-for (const show in movie) {
-    console.log(movie[show]);
-}
-
-
-// zadanie 5
-
-var animals = [
-    {
-        type: "cat",
-        breed: "persian",
-        name: "Tiberius",
-        health: [
-            {
-                date: "2012-03-03",
-                visitType: "grafting"
-            },
-            {
-                date: "2015-06-23",
-                visitType: "bowel surgery"
-            }
-        ]
+    up: function() {
+        this.step += 1;
     },
-    {
-        type: "Guinea pig",
-        breed: "The Rex",
-        name: "Marko",
-        health: [
-            {
-                date: "2015-12-04",
-                visitType: "grafting"
-            },
-            {
-                date: "2016-03-15",
-                visitType: "ear cleaning"
-            }
-        ]
-    }
 
-]
+    down: function() {
+        this.step -= 1;
+    },
 
-for (let index = 0; index < animal.length; index++) {
-    for (const key in animal[index]) {
-            console.log(animal[index][key]);
+    printStep: function() {
+        console.log(this.step);
     }
 }
 
-
-// zadanie 6
-
-var spoon = {
-    isExist: true
-}
-
-var fork = spoon;
-fork.isExist  = false;
-
-console.log(spoon.isExist);
+stairs.up();
+stairs.up();
+stairs.up();
+stairs.down();
+stairs.printStep();
